@@ -15,7 +15,7 @@ def login(request):
     else:
         form = CustomAuthenticationForm()
     return render(request, 'account/login.html', {
-        'title': 'ABIAGIS', 
+        'title': 'ELTAN', 
         'form': form
     })
 
@@ -30,7 +30,7 @@ def register(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'account/register.html', {
-        'title': 'ABIAGIS', 
+        'title': 'ELTAN', 
         'form': form
     })
 
