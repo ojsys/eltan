@@ -3,10 +3,66 @@
 {% load static %}
 
 {% block title %}
-    {{ title}}
+    {{ title }}
 {% endblock title %}
 {% block content %}
-<div class="container">
-    <h1>Hello, world!</h1>
+<style>
+    .card {
+        min-height: 37.4rem !important;
+    }
+
+    .features > div{
+        height: 30rem !important;
+    }
+    .features .fea-1{
+        width: 28rem;
+        background-color: #e78937;
+    }
+    .features .fea-2{
+        width: 28rem ;
+        background-color: #025d8e;
+    }
+
+
+
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card align-items-center" style="padding-left:30px; width: 29.4rem; border:none; background-color: #f8e7c5;">
+                <div class="card-body position-absolute top-50 start-3">
+                  <h2 class="card-title fs-10">Welcome To ELTAN</h2>
+                  <p class="card-text fs-5">Join us in fostering excellence in English language teaching and learning across Nigeria. Explore our resources, events, and community to enhance your professional journey.</p>
+                  <a href="{% url 'register' %}" class="btn btn-lg btn-primary mt-3" style=" border:none; background-color: #E67918; padding:10px 15px; border-radius: 0;">JOIN NOW</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 28rem;">
+                <img src="{% static 'images/image_teacher.jpg' %}" class="card-img" alt="...">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 banner">
+        <h3 class="text-center mt-5 mb-3">Upcoming Events</h3>
+        <div class="col-md-12">
+            <img src="{% static 'images/eltan_banner.png' %}" width="100%" alt="">
+        </div>
+    </div>
+
+    <div class="row mt-5 features">
+        <div class="col-md-6 fea-1 mx-2 text-white">
+            <h3 class="">ELTAN 2024 Conference & Exhibition</h3>
+            <p>Find out more about the ELTAN 2024 Conference</p>
+        </div>
+        <div class="col-md-6 fea-2 mx-2 text-white">
+            <h3>Volunteer Positions</h3>
+            <p>Thinking about taking your ELTAN membership to the next level? Find out about current volunteer positions to apply for</p>
+        </div>
+    </div>
 </div>
+
 {% endblock content %}

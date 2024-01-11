@@ -6,23 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
-
+    <div class="container text-center ">
+        <img class="mx-auto mt-3 mb-2" src="{% static 'images/logo-eltan.jpeg' %}" alt="" width="60">
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navvar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mx-auto">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-2 me-auto align-items-center">
+                    <li class="nav-item p-2" style="background-color: #e67918;">
+                        <a href="{% url 'register' %}" class="nav-link mx-2 active fs-5 fw-bold text-white">JOIN NOW</a>
+                    </li>
+                    <li class="fw-bold fs-5" >
+                        <a href="{% url 'login' %}" class="nav-link mx-2">Login <i class="fa-solid fa-circle-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                Follow us on: 
+                <ul class="navbar-nav mx-2 me-2 fs-5">
                     <li class="nav-item">
-                        <a href="" class="nav-link mx-2 active">JOIN NOW</a>
+                        <a href="" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link"><i class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <nav class="navbar navbar-expand-lg second-nav">
+        <div class="container">
+            <ul class="navbar-nav mx-auto align-items-center">
+                <li class="nav-item">
+                    <a href="" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">News & Views</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Special Interests Groups</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Resources</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Careers</a>
+                </li>
+                <li class="nav-item">|</li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Get Involved</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+        .second-nav div ul li{color:#e67918; padding:5px}
+        .second-nav div ul li a{color:#e67918}
+    </style>
 
     {% block content %}{% endblock content %}
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
