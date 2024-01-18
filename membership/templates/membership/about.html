@@ -1,12 +1,11 @@
 {% extends 'membership/base.html' %}
+{% load static %}
 {% block title %}
     {{ title }}
 {% endblock title %}
 {% block content %}
 <style>
-    .landing .card {
-        min-height: 20rem !important;
-    }
+    
 
     
     .features{
@@ -26,8 +25,9 @@
     <div class="row landing">
         <h2>About ELTAN</h2>
         <div class="col-md-6">
+            
             <div class="card align-items-center h-100 d-inline-block" style="padding-left:30px; width: 99%; border:none;">
-                <div class="card-body position-absolute top-50 start-3">
+                <div class="card-body position-absolute mt-5 start-3">
                   <h4 class="card-title fs-5">English Language Teachers Association of Nigeria (ELTAN)</h4>
                   <p class="card-text fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis velit ultrices, maximus justo sed, consectetur ex. 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat urna tincidunt, hendrerit libero sed, pellentesque libero. Curabitur pulvinar 
@@ -39,7 +39,36 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div class="card mt-5" style="width: 99%;">
+                <img src="{% static 'images/teacher_image1.jpg' %}" class="card-img" alt="...">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row history mt-5">
+        <h2 class="mt-5">ELTAN's History</h2>
+        <div class="col-md-4 mt-3">
+            <div class="card mt-5" style="width: 99%;">
+                <img src="{% static 'images/teacher_image1.jpg' %}" class="card-img" alt="...">
+                
+            </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <p class="fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis velit ultrices, maximus justo sed, consectetur ex. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat urna tincidunt, hendrerit libero sed, pellentesque libero. Curabitur pulvinar 
+                eros libero, ac ullamcorper elit dapibus nec. Aliquam erat volutpat. Cras ut venenatis libero. Aliquam erat volutpat. Sed at mi ac nunc condimentum finibus. 
+                Sed nulla nibh, molestie sed dui sed, venenatis hendrerit nunc. Suspendisse pellentesque gravida magna, a iaculis arcu ultrices a. Morbi blandit sollicitudin cursus. 
+                Pellentesque efficitur et nibh in vulputate. Mauris ac erat sed tellus vehicula convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vestibulum quis lacus vel quam hendrerit tristique.</p>
+            <p class="fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis velit ultrices, maximus justo sed, consectetur ex. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat urna tincidunt, hendrerit libero sed, pellentesque libero. Curabitur pulvinar 
+                    eros libero, ac ullamcorper elit dapibus nec. Aliquam erat volutpat. Cras ut venenatis libero. Aliquam erat volutpat. Sed at mi ac nunc condimentum finibus. 
+                    Sed nulla nibh, molestie sed dui sed, venenatis hendrerit nunc. Suspendisse pellentesque gravida magna, a iaculis arcu ultrices a. Morbi blandit sollicitudin cursus. 
+                    Pellentesque efficitur et nibh in vulputate. Mauris ac erat sed tellus vehicula convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Vestibulum quis lacus vel quam hendrerit tristique.</p>
+        </div>
     </div>
 
 </div>
