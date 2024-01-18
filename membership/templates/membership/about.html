@@ -1,0 +1,49 @@
+{% extends 'membership/base.html' %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block content %}
+<style>
+    .landing .card {
+        min-height: 20rem !important;
+    }
+
+    
+    .features{
+        padding-top: 90px !important;
+        
+    }
+    .features > div {
+        height: 25rem !important;
+    }
+    .features2 > div {
+        height: 25rem !important;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <div class="row landing">
+        <h2>About ELTAN</h2>
+        <div class="col-md-6">
+            <div class="card align-items-center h-100 d-inline-block" style="padding-left:30px; width: 99%; border:none;">
+                <div class="card-body position-absolute top-50 start-3">
+                  <h4 class="card-title fs-5">English Language Teachers Association of Nigeria (ELTAN)</h4>
+                  <p class="card-text fs-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis velit ultrices, maximus justo sed, consectetur ex. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat urna tincidunt, hendrerit libero sed, pellentesque libero. Curabitur pulvinar 
+                    eros libero, ac ullamcorper elit dapibus nec. Aliquam erat volutpat. Cras ut venenatis libero. Aliquam erat volutpat. Sed at mi ac nunc condimentum finibus. 
+                    Sed nulla nibh, molestie sed dui sed, venenatis hendrerit nunc. Suspendisse pellentesque gravida magna, a iaculis arcu ultrices a. Morbi blandit sollicitudin cursus. 
+                    Pellentesque efficitur et nibh in vulputate. Mauris ac erat sed tellus vehicula convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Vestibulum quis lacus vel quam hendrerit tristique.</p>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+
+</div>
+
+
+
+{% endblock content %}

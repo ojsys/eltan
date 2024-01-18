@@ -7,6 +7,10 @@ def index(request):
     context = {'title': 'ELTAN - Home'}
     return render(request, 'membership/index.html', context)
 
+def about(request):
+    context = {'title': 'ELTAN - About'}
+    return render(request,'membership/about.html', context)
+
 @login_required
 def dash(request):
     pass

@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container text-center ">
-        <img class="mx-auto mt-3 mb-2" src="{% static 'images/logo-eltan.jpeg' %}" alt="" width="60">
+        <a href="{% url 'home' %}"><img class="mx-auto mt-3 mb-2" src="{% static 'images/logo-eltan.jpeg' %}" alt="" width="60"></a>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -50,7 +50,7 @@
         <div class="container">
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
-                    <a href="" class="nav-link">About</a>
+                    <a href="{% url 'about' %}" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">|</li>
                 <li class="nav-item">
@@ -139,7 +139,7 @@
       
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-         ELTAN © <script type="text/JavaScript"> var theDate=new Date() document.write(theDate.getFullYear()) </script> Copyright:
+         ELTAN © 2024 Copyright:
           <a class="text-body" href="#">www.eltanigeria.com</a>
         </div>
         <!-- Copyright -->
