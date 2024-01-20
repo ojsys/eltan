@@ -11,6 +11,12 @@ def about(request):
     context = {'title': 'ELTAN - About'}
     return render(request,'membership/about.html', context)
 
+
+def sigs(request):
+    context = {'title': 'ELTAN - SIGs'}
+    return render(request, 'membership/sigs.html', context)
+
+
 @login_required
 def dash(request):
     pass
