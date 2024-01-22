@@ -19,4 +19,9 @@ def sigs(request):
 
 @login_required
 def dash(request):
-    pass
+    user = request.user
+    context = {
+        'title': 'ELTAN - Dashboard',
+        'user': user,
+        }
+    return render(request,'membership/dash.html', context)

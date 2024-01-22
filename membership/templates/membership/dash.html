@@ -6,5 +6,35 @@
 {% endblock title %}
 
 {% block content %}
+    <div class="container">
+        {% if user.is_authenticated %}
+        <div id="loggedInAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+            Welcome {{ user.first_name }}!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    
+        <script>
+            // Auto-hide the alert after 5 seconds (adjust as needed)
+            setTimeout(function() {
+                $('#loggedInAlert').alert('close');
+            }, 10000);
+        </script>
+        {% endif %}
+        <h2 class="mt-5">My Dashboard</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-6">
 
+                    </div>
+                    <div class="col-6"></div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
 {% endblock content %}

@@ -10,7 +10,7 @@ def login(request):
         if form.is_valid():
             user = form.get_user()
             auth_login(request, user)
-            return redirect('index')
+            return redirect('dash')
             
     else:
         form = CustomAuthenticationForm()
@@ -23,25 +23,21 @@ def login(request):
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
-        member_form = MemberSignupForm(request.POST)
-
-        if form.is_valid() and member_form.is_valid():
+        
+        if form.is_valid():
             user = form.save()
-            member = member_form.save(commit=False)
-            member.user = user
-            member.save()
             auth_login(request, user)
-            return redirect('index')
+            return redirect('dash')
     else:
         form = CustomUserCreationForm()
-        member_form = MemberSignupForm()
-
+        
     return render(request, 'account/register.html', {
         'title': 'ELTAN', 
         'form': form,
-        'member_form': member_form
     })
 
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
