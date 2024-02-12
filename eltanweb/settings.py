@@ -33,6 +33,7 @@ AUTH_USER_MODEL = 'account.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
+    'livereload',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'livereload.middleware.LiveReloadScript',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
