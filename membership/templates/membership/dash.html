@@ -22,22 +22,71 @@
             }, 10000);
         </script>
         {% endif %}
-        <h2 class="mt-5">My Dashboard</h2>
+        <h2 class="mt-5 mb-5">My Dashboard</h2>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="row">
+                <div class="row mb-xl-9">
                     <div class="col-6">
-                        Item 5
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg" style="height:10vh">
+            
+                                <h4 class="my-3" editable="inline"> Conferences</h4>
+                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est.&nbsp;</p>
+            
+                                <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            </div><!-- /lc-block -->
+                        </div>
                     </div>
                     <div class="col-6">
-                        Item 4
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/select.svg" style="height:10vh">
+            
+                                <h4 class="my-3" editable="inline">Membership Benefits</h4>
+                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est.&nbsp;</p>
+            
+            
+                                <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            </div><!-- /lc-block -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-xl-5">
+                    <div class="col-6">
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg" style="height:10vh">
+            
+                                <h4 class="my-3" editable="inline"> My SIGs</h4>
+                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est.&nbsp;</p>
+            
+                                <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            </div><!-- /lc-block -->
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-lg-5 p-4 shadow">
+                            <div class="lc-block mb-4">
+                                <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/select.svg" style="height:10vh">
+            
+                                <h4 class="my-3" editable="inline"></h4>
+                                <p editable="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est.&nbsp;</p>
+            
+            
+                                <a class="btn btn-outline-primary" href="#" role="button">Read more</a>
+                            </div><!-- /lc-block -->
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                Item 4
+                <div style="background-color: rgb(243, 218, 185);" class="p-lg-5 p-4 shadow">
+                    <h4 class="my-3 mb-4" editable="inline">Membership Info</h4>
+                    <p class="">Your Personal ID: {{ user.id }}</p>
+                </div>
             </div>
         </div>
     </div>
