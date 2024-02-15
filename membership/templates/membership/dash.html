@@ -36,7 +36,7 @@
                                 <h4 class="my-3" editable="inline"> Conferences</h4>
                                 <p editable="inline">Register for Annual Conference</p>
             
-                                <a class="btn btn-outline-primary" href="#" role="button">Click Here</a>
+                                <a class="btn btn-outline-warning text-black" href="#" role="button">Click Here</a>
                             </div><!-- /lc-block -->
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 <p editable="inline">Check out your Benefits!</p>
             
             
-                                <a class="btn btn-outline-primary" href="#" role="button">Click Here</a>
+                                <a class="btn btn-outline-warning text-black" href="#" role="button">Click Here</a>
                             </div><!-- /lc-block -->
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <h4 class="my-3" editable="inline"> My SIGs</h4>
                                 <p editable="inline">What are my SIGs?</p>
             
-                                <a class="btn btn-outline-primary" href="#" role="button">Click Here</a>
+                                <a class="btn btn-outline-warning text-black" href="#" role="button">Click Here</a>
                             </div><!-- /lc-block -->
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                 <p editable="inline">Check our my CPDs!</p>
             
             
-                                <a class="btn btn-outline-warning" href="#" role="button">Click Here</a>
+                                <a class="btn btn-outline-warning text-black" href="#" role="button">Click Here</a>
                             </div><!-- /lc-block -->
                         </div>
                     </div>
@@ -85,7 +85,10 @@
             <div class="col-md-4">
                 <div style="background-color: rgb(243, 218, 185);" class="p-lg-5 p-4 shadow">
                     <h4 class="my-3 mb-4" editable="inline">Membership Info</h4>
-                    <p class="">Your Personal ID: {{ user.id }}</p>
+                    <p class="">
+                        Your Personal ID: {{ user.id }}<br>
+                        <strong>{{ user.first_name}} {{ user.last_name }}</strong>
+                    </p>
 
                     <p class="">Associate Member <br>Expires 19th December 2024</p>
                     <p class=""></p>

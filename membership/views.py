@@ -25,3 +25,9 @@ def dash(request):
         'user': user,
         }
     return render(request,'membership/dash.html', context)
+
+
+@login_required
+def my_conferences(request, user_id):
+    context = {'title': 'ELTAN - My Conferences'}
+    return render(request,'membership/my_conferences.html', context)
