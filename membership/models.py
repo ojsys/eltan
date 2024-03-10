@@ -40,4 +40,9 @@ class Subscription(models.Model):
     payment_status = models.CharField(max_length=20) # eg "paid" or "pending"
     payment_id = models.CharField(max_length=255, blank=True)
     payment_amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    
+
+
+
+class MyConference(models.Model):
+    theme = models.CharField(max_length=150)
+    location = models.CharField(max_length=100)
