@@ -31,3 +31,9 @@ def dash(request):
 def my_conferences(request, user_id):
     context = {'title': 'ELTAN - My Conferences'}
     return render(request,'membership/my_conferences.html', context)
+
+
+@login_required
+def my_cpds(request):
+    context = {}
+    return render(request, 'membership/my_cpds.html', context)
