@@ -75,7 +75,7 @@ def my_cpds(request):
 
 # ----------- User Update Views -------------------
 @login_required
-def update_profile(request):
+def profile_update(request):
     if request.method == 'POST':
         form = MemberProfileUpdateForm(request.POST, request.FILES, instance=request.user.memberprofile)
         if form.is_valid():
@@ -88,5 +88,5 @@ def update_profile(request):
 
 
 @login_required
-def profile_update_succes(request):
+def profile_update_success(request):
     return render(request,'membership/profile_update_succes.html')

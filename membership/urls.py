@@ -15,4 +15,8 @@ urlpatterns = [
     path('conference_registration/<int:conference_id>', views.conference_registration, name='conference_register'),
     path('user/conferences/', views.user_conferences, name='user_conferences'),
 
+    #Update Profile
+    path('profile/update/', views.profile_update, name='profile_update'),
+    path('profile/update/success/', views.profile_update_success, name='profile_update_success'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
