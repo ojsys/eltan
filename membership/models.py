@@ -17,6 +17,9 @@ class MemberProfile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.user.first_name + ' ' + self.user.last_name
+
 class MembershipType(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
@@ -55,4 +58,21 @@ class Conference(models.Model):
 class ConferenceRegistration(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+    registration_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.conference.title + " - " + self.user.first_name + "  " + self.user.last_name
+    
+###############Defining SIGs Models#######################
+class Sigs(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='sig_images/')
+
+    def __str__(self):
+        return self.title
+
+class SigsRegistration(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    sig = models.ForeignKey(Sigs, on_delete=models.CASCADE)
     registration_date = models.DateTimeField(auto_now_add=True)

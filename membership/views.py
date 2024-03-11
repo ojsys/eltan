@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Conference, ConferenceRegistration
-from .forms import ConferenceRegistrationForm
+from .models import Conference, ConferenceRegistration, MemberProfile
+from .forms import ConferenceRegistrationForm, MemberProfileUpdateForm 
 
 # Create your views here.
 
@@ -64,8 +64,29 @@ def user_conferences(request):
     return render(request, 'membership/my_conferences.html', {'user_conferences': user_conferences, 'conferences': conferences})
 
 #-------- End of conference components ------------------------
-
+#----------  My CPDs Views --------------------------
 @login_required
 def my_cpds(request):
     context = {}
     return render(request, 'membership/my_cpds.html', context)
+
+
+
+
+# ----------- User Update Views -------------------
+@login_required
+def update_profile(request):
+    if request.method == 'POST':
+        form = MemberProfileUpdateForm(request.POST, request.FILES, instance=request.user.memberprofile)
+        if form.is_valid():
+            form.save()
+            return redirect('dash')
+    else:
+        form = MemberProfileUpdateForm(instance=request.user.memberprofile)
+    context = {'form': form}
+    return render(request,'membership/update_profile.html', context)
+
+
+@login_required
+def profile_update_succes(request):
+    return render(request,'membership/profile_update_succes.html')
