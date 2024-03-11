@@ -43,6 +43,16 @@ class Subscription(models.Model):
 
 
 
-class MyConference(models.Model):
-    theme = models.CharField(max_length=150)
+class Conference(models.Model):
+    title = models.CharField(max_length=255)
+    conf_date = models.DateField()
     location = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='conference_images/')
+
+    def __str__(self):
+        return self.title
+
+class ConferenceRegistration(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+    registration_date = models.DateTimeField(auto_now_add=True)

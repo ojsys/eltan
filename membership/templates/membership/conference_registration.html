@@ -1,0 +1,15 @@
+{% extends "membership/base.html" %}
+{% load static %}
+
+{% block title %}
+    Conference Registration
+{% endblock title %}
+
+{% block content %}
+    <h2>Conference Registration</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+{% endblock content %}
