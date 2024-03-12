@@ -90,3 +90,8 @@ def profile_update(request):
 @login_required
 def profile_update_success(request):
     return render(request,'membership/profile_update_success.html')
+
+# ----------- Download Certificate Views -------------------
+@login_required
+def view_certs(request):
+    return render(request,'membership/my_certs.html')

@@ -19,4 +19,7 @@ urlpatterns = [
     path('profile/update/', views.profile_update, name='profile_update'),
     path('profile/update/success/', views.profile_update_success, name='profile_update_success'),
 
+    #Download Certificate
+    path('download_certificate/my_certs', views.view_certs, name='my_certs'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
