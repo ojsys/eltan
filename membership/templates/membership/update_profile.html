@@ -1,4 +1,6 @@
 {% extends 'membership/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     {{ title }} - Update Profile 
@@ -15,7 +17,7 @@
                     <div class="col-md-12">
                         <form method="post">
                             {% csrf_token %}
-                            {{ form|crispy }}
+                            {{ form | crispy }}
                             <button type="submit" class="btn btn-warning">Update</button>
                         </form>
                     </div>

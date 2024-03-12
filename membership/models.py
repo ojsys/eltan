@@ -1,19 +1,20 @@
 from django.db import models
 from datetime import timezone
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from account.models import CustomUser
 
 class MemberProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    gender = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')))
-    phone_number = models.CharField(max_length=15)
-    address = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
-    zip_code = models.CharField(max_length=10)
-    country = models.CharField(max_length=50)
+    gender = models.CharField(max_length=1, choices=(('M', 'Male'), ('F', 'Female')), null=True, blank=True)
+    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    address = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True)
+    state = models.CharField(max_length=50, null=True, blank=True)
+    zip_code = models.CharField(max_length=10, null=True, blank=True)
+    country = models.CharField(max_length=50, null=True, blank=True)
     date_of_birth = models.DateField()
-    profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

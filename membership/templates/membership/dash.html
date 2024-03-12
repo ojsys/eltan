@@ -35,8 +35,8 @@
                             <div class="lc-block mb-4">
                                 <img alt="" class="img-fluid" src="https://cdn.livecanvas.com/media/svg/undraw/no-data.svg" style="height:10vh">
             
-                                <h4 class="my-3" editable="inline"> Conferences</h4>
-                                <p editable="inline">Register for Annual Conference</p>
+                                <h4 class="my-3" editable="inline"> Events</h4>
+                                <p editable="inline">Register for An Event</p>
             
                                 <a class="btn btn-outline-warning text-black" href="{% url 'user_conferences' %}" role="button">Click Here</a>
                             </div><!-- /lc-block -->
@@ -92,7 +92,7 @@
                         <strong>{{ user.first_name}} {{ user.last_name }}</strong>
                     </p>
 
-                    <p class="">Associate Member <br>Expires 19th December 2024</p>
+                    <p class="">Member <br>Expires 19th December 2024</p>
                     <p class=""></p>
 
                     <p class="mt-4">Get SIG Subscriptions</p>
@@ -101,7 +101,7 @@
                     <h4 class="mt-5 mb-4" editable="inline">Account Settings</h4>
                     <p class="">Change Your Password</p>
 
-                    <p class="">Update Your Address</p>
+                    <p class=""><a href="{% url 'profile_update' %}">Update Profile</a></p>
                     <p class="mt-4">My Payments</p>
  
                 </div>

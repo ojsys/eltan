@@ -9,3 +9,7 @@ class MemberProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = MemberProfile
         fields = "__all__"
+        exclude = ()
+        widgets = {
+            'date_of_birth': forms.DateInput(attrs={'type': 'date'}),
+        }

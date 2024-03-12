@@ -80,7 +80,7 @@ def profile_update(request):
         form = MemberProfileUpdateForm(request.POST, request.FILES, instance=request.user.memberprofile)
         if form.is_valid():
             form.save()
-            return redirect('dash')
+            return redirect('profile_update_success')
     else:
         form = MemberProfileUpdateForm(instance=request.user.memberprofile)
     context = {'form': form}
@@ -89,4 +89,4 @@ def profile_update(request):
 
 @login_required
 def profile_update_success(request):
-    return render(request,'membership/profile_update_succes.html')
+    return render(request,'membership/profile_update_success.html')
