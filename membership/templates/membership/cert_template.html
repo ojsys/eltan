@@ -1,0 +1,73 @@
+<!-- certificate_template.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Certificate</title>
+    <style>
+        @page {
+        size: letter landscape;
+        margin: 2cm;
+        @frame header_frame {           /* Static frame */
+            -pdf-frame-content: header_content;
+            left: 50pt; width: 512pt; top: 30pt; height: 140pt;
+        }
+        @frame col1_frame {             /* Content frame 1 */
+            left: 44pt; width: 512pt; top: 130pt; height: 632pt;
+        }
+        @frame col2_frame {
+            -pdf-frame-content: signatures;             /* Content frame 2 */
+            left: 44pt; width: 512pt; top:450pt; height: 632pt;
+        }
+        @frame col3_frame {
+            -pdf-frame-content: qr_code;             /* Content frame 2 */
+            left: 650pt; width: 200pt; top:300pt; height: 320pt;
+        }
+        @frame footer_frame {           /* Static frame */
+            -pdf-frame-content: footer_content;
+            left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+            }
+        }
+        h1{
+            font-size: 5em;
+        }
+        p{
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="header_content"><img src="http://localhost:8000/{% static 'images/logo-eltan.jpeg' %}" width="130" alt="ELTAN"></div>
+    
+    
+    <h1 style="color: #193784; font: 2.5em Arial; line-height: 1.1em;">English Language Teachers <br>Association of Nigeria</h1>
+    <h1 style="color: #E97717; margin-bottom: -3pt;">Certificate of Membership</h1>
+    <p style="color: #1D4355; margin-top: -4pt; margin-bottom: 1pt;">This is to certify that</p>
+    <h3 style="color: #1D4355; font-size: 4em; margin-top: 0.3em; margin-bottom: -3pt;">{{ member.first_name }} {{ member.last_name }}</h3> 
+    <p style="color: #1D4355; margin-top: -2pt;">with membership number <span style="font-size: 1.5em;">#0{{ member.id }}</span></p>
+    <!-- Add additional certificate details -->
+    <p style="color: #1D4355;">is a registered member of the English Language Teachers Association of Nigeria (ELTAN) for 2023/2024</p>
+    
+    <div id="signatures" style="display: inline-block;">
+        <div >
+            <img src="http://localhost:8000/{% static 'images/signature_DrKen.jpeg' %}" width="150" height="45" alt="">
+            <p style="margin-top: -0.8pt;"><span style="font-size: 18px; margin-bottom: -1.2pt; font-weight: bolder;">Dr. Kenedy Edegbe</span><br><span style="font-size: 16px;">National President</span></p>
+        </div>
+        <div>
+            <img src="http://localhost:8000/{% static 'images/signature_abel.jpeg' %}" width="70" height="45" alt="">
+            <p style="margin-top: 0;"><span style="font-size: 18px; margin-bottom: -1.2pt; font-weight: bolder;">Abel E. Ochika</span><br><span style="font-size: 16px;">National Secretary</span></p>
+        </div>
+    
+    </div>
+
+    <div id="qr_code">
+        QR Code Will Be Used Here    
+    </div>
+    
+</body>
+</html>

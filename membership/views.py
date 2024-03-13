@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
 from .models import Conference, ConferenceRegistration, MemberProfile
 from .forms import ConferenceRegistrationForm, MemberProfileUpdateForm 
@@ -95,3 +98,26 @@ def profile_update_success(request):
 @login_required
 def view_certs(request):
     return render(request,'membership/my_certs.html')
+
+
+@login_required
+def generate_certs(request):
+
+    # Retrieve Member Information
+    member = request.user
+    
+    # Render Certificate Template
+    template_path = 'membership/cert_template.html'
+    context = {
+      'member': member,
+    }
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # Generate PDF by converting the html to PDF format
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="ELTAN_member_certificate.pdf"'
+    pisa_status = pisa.CreatePDF(html, dest=response)
+    if pisa_status.err:
+        return HttpResponse('Failed to generate the certificate. Please try again.', status=500)
+    return response

@@ -21,5 +21,6 @@ urlpatterns = [
 
     #Download Certificate
     path('download_certificate/my_certs', views.view_certs, name='my_certs'),
+    path('download_certificate/certificate/', views.generate_certs, name='download_certificate')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
