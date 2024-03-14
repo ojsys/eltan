@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership Certificate</title>
     <style>
+        @font-face {
+            font-family: CloisterBlack;
+            src: url('../../../static/fonts/CloisterBlack.ttf');
+        }
+       
         @page {
         size: letter landscape;
         margin: 2cm;
@@ -45,7 +50,7 @@
     <div id="header_content"><img src="http://localhost:8000/{% static 'images/logo-eltan.jpeg' %}" width="130" alt="ELTAN"></div>
     
     
-    <h1 style="color: #193784; font: 2.5em Arial; line-height: 1.1em;">English Language Teachers <br>Association of Nigeria</h1>
+    <h1 style="color: #193784; font-family: CloisterBlack; font-size: 2.5em; line-height: 1.1em;">English Language Teachers <br>Association of Nigeria</h1>
     <h1 style="color: #E97717; margin-bottom: -3pt;">Certificate of Membership</h1>
     <p style="color: #1D4355; margin-top: -4pt; margin-bottom: 1pt;">This is to certify that</p>
     <h3 style="color: #1D4355; font-size: 4em; margin-top: 0.3em; margin-bottom: -3pt;">{{ member.first_name }} {{ member.last_name }}</h3> 
@@ -66,7 +71,8 @@
     </div>
 
     <div id="qr_code">
-        QR Code Will Be Used Here    
+        QR Code Will Be Used Here  
+        <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">  
     </div>
     
 </body>

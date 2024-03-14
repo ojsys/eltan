@@ -5,6 +5,7 @@ from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
 from .models import Conference, ConferenceRegistration, MemberProfile
 from .forms import ConferenceRegistrationForm, MemberProfileUpdateForm 
+import qrcode
 
 # Create your views here.
 
@@ -105,11 +106,17 @@ def generate_certs(request):
 
     # Retrieve Member Information
     member = request.user
+
+    # Generate QR code for Member Profile
+    verification_url = request.build_absolute_uri('certificate/verify')
+    qr = qrcode.make(verification_url)
+    qr_bytes = qr.get_image().tobytes()
     
     # Render Certificate Template
     template_path = 'membership/cert_template.html'
     context = {
       'member': member,
+      'qr_code': qr_bytes
     }
     template = get_template(template_path)
     html = template.render(context)
